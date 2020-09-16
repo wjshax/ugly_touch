@@ -1,0 +1,147 @@
+<div class="photo-album-container">
+  <div class="header">
+    <div class="header-photos" [style.display]='photoActive?"block":"none"'>
+      照片
+    </div>
+    <div class="header-recommend" [style.display]='recommendActive?"block":"none"'>
+      推荐
+    </div>
+    <div class="header-album" [style.display]='albumActive?"block":"none"'>
+      相册
+    </div>
+    <div class="header-search" [style.display]='searchActive?"block":"none"'>
+      <h3 [class]="searchFocused">搜索</h3>
+      <div class="search-input"  [class]="searchFocused">
+        <div class="search-input-wrapper">
+          <div class="search-input-flex">
+            <div class="search-icon-wrapper">
+              <img [src]="searchInputIcon" alt="" class="search-icon">
+            </div>
+            <div class="search-input-box-wrapper">
+              <input type="text" [(ngModel)]="searchValue.keyword" class="search-input-box" placeholder="照片、人物、地点…"
+                (focus)="searchInputFocused()" (blur)="searchInputBlur($event)" #inputBox>
+            </div>
+            <div class="search-icon-wrapper" [style.visibility]='searchValue.keyword===""?"hidden":"visible"'>
+              <div class="close-icon" (click)="clearSearchInput()"></div>
+            </div>
+          </div>
+        </div>
+        <span class='cancel-btn' (click)="cancelSearch(inputBox)">
+          <span [class]="searchFocused">
+            <span>取消</span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="page-photos" [style.display]='photoActive?"block":"none"'>
+
+      <div class="photos-containers" 
+      libUgLibTouch
+      [gestures]="[UgLibTouchGesture.Vertical]"
+      (touched)="touchedPhtotsContainer($event)"
+      >
+        <app-scroll-bar [percentage]='50' [start]='10' class='photos-container-old-scroll'></app-scroll-bar>
+        <!-- 稳定期间显示的内容在这里 -->
+        <div class="photos-container-old">
+          <div class="photos-all">
+            <div *ngFor="let url of urlList">
+              <!-- <app-photo [url]='url'></app-photo> -->
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <!-- 过度的那个图片 -->
+        <div class="photo-transform">
+
+        </div>
+
+        <!-- 新的图片，在动画完成后消失 -->
+        <div class="photos-container-new">
+
+        </div>
+      </div>
+    </div>
+    <div class="page-recommend" [style.display]='recommendActive?"block":"none"'>
+      推荐
+    </div>
+    <div class="page-album" [style.display]='albumActive?"block":"none"'>
+      相册
+    </div>
+    <div class="page-search" [style.display]='searchActive?"block":"none"'>
+      {{ searchValue.keyword }}
+      <div class="page-advice-wrapper">
+        <div class="advice">
+          <h4 class="advice-header">没有建议</h4>
+          <div class="advice-info">“照片”可扫描图库来提供“搜索建议”。整晚将iPhone接入电源以继续扫描。</div>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+
+
+  
+
+  <div class="footer">
+    <div class="footer-menu">
+      <div class="footer-icon-wrapper">
+        <div class="footer-icon-bottom-wrapper">
+          <div class="footer-bottom" (click)='bottomBtnClicked("photoActive")'>
+            <div class="icon">
+              <img [src]="photoActive ? iphotoActive : iphoto" alt="" />
+            </div>
+            <span>照片</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-icon-wrapper">
+        <div class="footer-icon-bottom-wrapper">
+          <div class="footer-bottom" (click)='bottomBtnClicked("recommendActive")'>
+            <div class="icon">
+              <img [src]="recommendActive ? irecommendActive : irecommend" alt="" />
+            </div>
+            <span>为你推荐</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-icon-wrapper">
+        <div class="footer-icon-bottom-wrapper">
+          <div class="footer-bottom" (click)='bottomBtnClicked("albumActive")'>
+            <div class="icon">
+              <img [src]="albumActive ? ialbumActive : ialbum" alt="" />
+            </div>
+            <span>相薄</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-icon-wrapper">
+        <div class="footer-icon-bottom-wrapper">
+          <div class="footer-bottom" (click)='bottomBtnClicked("searchActive")'>
+            <div class="icon">
+              <img [src]="searchActive ? isearchActive : isearch" alt="" />
+            </div>
+            <span>搜索</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-img-footer">
+      <div class="footer-img-preview">
+
+      </div>
+      <div class="footer-img-btn">
+        
+      </div>
+    </div>
+  </div>
+</div>

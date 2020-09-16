@@ -1,0 +1,14 @@
+<h5>
+  page-touch-a works!
+</h5>
+
+<button (click)="close()">关闭</button>
+<div class="touch-area" 
+(touchstart)="touchStart($event)"
+(touchend)="touchEnd($event)"
+>
+  <div *ngFor="let touch of touchList">{{ touch.identifier }}</div>
+</div>
+<div class="msg-out">
+  <div *ngFor="let msg of msgList">{{ msg }}</div>
+</div>

@@ -1,0 +1,19 @@
+<h4>
+  page-touch-g works!
+</h4>
+
+<div class="zoom-rotation-container">
+  <div
+    class="zoom-rotation-object"
+    libUgLibTouch
+    [gestures]="[UgLibTouchGesture.ZoomRotation, UgLibTouchGesture.Vertical]"
+    (touched)="touchedZoom($event)"
+    [style.top.px]="top"
+    [style.left.px]="left"
+    [style.transform]="'rotate('+rotate+'deg)scale('+scale+')'"
+    [style.transitionProperty]='"all"'
+    [style.transitionDuration.ms]='delay'
+  >
+    <img [src]="testImg" alt="" />
+  </div>
+</div>

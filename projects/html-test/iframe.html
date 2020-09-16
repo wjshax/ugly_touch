@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>parent content</h1>
+    <button>向子页面发送数据</button>
+    <iframe src="./iframe-content.html" frameborder="0"></iframe>
+
+<script>
+    let btn = document.getElementsByTagName('button')[0];
+    let frame = document.getElementsByTagName('iframe')[0];
+    
+    btn.addEventListener('click',function(event){
+        frame.contentWindow.postMessage('来自父页面的问候','*');
+    },false);
+
+    window.addEventListener('message',function(event){
+        console.log('got msg:',event.data);
+    },false);
+</script>
+</body>
+</html>

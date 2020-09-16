@@ -1,0 +1,47 @@
+.zoom-rotation-container {
+  margin: 10px 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: black;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotation{
+  position: relative;
+  border-radius: 30vw;
+  width: 90vw;
+  height: 90vw;
+  background-color: red;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-ratation-object {
+  position: relative;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg-list {
+  position: relative;
+  display: inline-block;
+  width: 100vw;
+  height: 70vw;
+  overflow-y: scroll;
+  overflow-x: auto;
+  background-color: wheat;
+}

@@ -1,0 +1,47 @@
+.rt-btns{
+    width: 80px;
+    height:26px;
+    /* border:1px solid black; */
+    display: inline-block;
+    text-align: center;
+    border-radius: 13px;
+    background-color: darkgrey;
+    opacity: 1;
+}
+
+.rt-btns>div{
+    display: inline-block;
+    height:26px;
+}
+
+.rt-divider::after{
+    content:"";
+    border-right:1px solid white;
+    vertical-align: 8px;
+    font-size: 8px;
+}
+
+.rt-btns img{
+    height: 26px;
+    opacity: 1;
+}
+
+.rt-menu{
+    height:26px;
+    width:39px;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+}
+.rt-close{
+    height:26px;
+    width:40px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+.rt-menu:hover{
+    background-color: #ccc;
+}
+
+.rt-close:hover{
+    background-color: #ccc;
+}

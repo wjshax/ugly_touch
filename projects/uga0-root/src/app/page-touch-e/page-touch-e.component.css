@@ -1,0 +1,27 @@
+.zoom-rotation-container {
+  width: 100vw;
+  height: 150vw;
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-rotation-object {
+  width: 80%;
+  display: inline-block;
+  position: relative;
+}
+
+.zoom-rotation-object img {
+  height: 100%;
+  width:100%;
+  object-fit: scale-down;
+  vertical-align: top;
+}
+
+.msgs{
+  height:30vw;
+  overflow: scroll;
+}

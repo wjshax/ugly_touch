@@ -1,0 +1,40 @@
+<h3>
+  page-touch-test works!
+</h3>
+
+<button (click)="close()">关闭</button>
+
+<div class="touch-container">
+  <div class="touch-block" libUgLibTouch>
+    <span>
+      1
+    </span>
+  </div>
+  <div class="touch-block" libUgLibTouch>
+    <span>
+      2
+    </span>
+  </div>
+
+
+<div class='rotation-test' libUgLibTouch [stop]='true'>
+  <lib-ug-rotation [cnt]='3'>
+    <div class="image-1 rt-test">1</div>
+    <div class="image-2 rt-test">2</div>
+    <div class="image-3 rt-test">3</div>
+    <div class="image-4 rt-test">4</div>
+    <div class="image-5 rt-test">5</div>
+  </lib-ug-rotation>
+</div>
+
+<div class='rotation-test'>
+  <lib-ug-rotation [cnt]='3'>
+    <div class="image-1 rt-test">1</div>
+    <div class="image-2 rt-test">2</div>
+    <div class="image-3 rt-test">3</div>
+    <div class="image-4 rt-test">4</div>
+    <div class="image-5 rt-test">5</div>
+  </lib-ug-rotation>
+</div>
+
+</div>

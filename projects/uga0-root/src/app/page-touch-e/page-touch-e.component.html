@@ -1,0 +1,24 @@
+<h4>
+  page-touch-e works!
+</h4>
+
+<div class="zoom-rotation-container">
+  <div
+    class="zoom-rotation-object"
+    libUgLibTouch
+    [gestures]="[UgLibTouchGesture.ZoomRotation, UgLibTouchGesture.Vertical]"
+    (touched)="touchedZoomRotation($event)"
+    [style.top.px]="top"
+    [style.left.px]="left"
+    [style.transform]="'rotate('+rotate+'deg)scale('+scale+')'"
+    [style.transitionProperty]='"all"'
+    [style.transitionDuration.ms]='delay'
+  >
+    <img [src]="testImg" alt="" />
+  </div>
+</div>
+
+<h5>msgs</h5>
+<div class="msgs">
+  <div *ngFor="let msg of msgs">{{ msg }}</div>
+</div>

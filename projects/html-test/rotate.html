@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    body{
+      width:100vw;
+      height:100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .block{
+      width:100px;
+      height:100px;
+      border:1px solid black;
+      position: relative;
+      border-radius: 10px 20px 0px 40px;
+      transform: rotate(90deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="block"><div>👆</div></div>
+</body>
+
+<script>
+  let block = document.getElementsByClassName('block')[0];
+  oldDeg = 90;
+  function rotate(deg){
+    block.style.transform=`rotate(${deg}deg)`
+    oldDeg = deg;
+  }
+
+  function drotate(ddeg){
+    oldDeg=oldDeg+ddeg;
+    block.style.transform=`rotate(${oldDeg}deg)`
+  }
+</script>
+</html>

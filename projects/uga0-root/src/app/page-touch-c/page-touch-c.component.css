@@ -1,0 +1,10 @@
+.wrapper-head{
+  width:100%;
+  height:20%;
+}
+.wrapper{
+  width:100%;
+  height:80%;
+  overflow-x: scroll;
+  overflow-y: auto;
+}

@@ -1,0 +1,23 @@
+.scroll-bar{
+    width:100%;
+    height:100%;
+    border:1px solid #aaa;
+    border-radius: 2.5px;
+}
+@media (-webkit-min-device-pixel-ratio:2){
+    .scroll-bar{
+        border:0.5px solid #aaa;
+    }
+}
+@media (-webkit-min-device-pixel-ratio:3){
+    .scroll-bar{
+        border:0.33333333333333333333px solid #aaa;
+    }
+}
+.bar{
+    position: relative;
+    width:100%;
+    height:100%;
+    background-color: #999;
+    border-radius: 1.5px;
+}

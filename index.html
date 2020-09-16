@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      div {
+        position: relative;
+        top: 200px;
+        left: 200px;
+        border: 1px solid black;
+        transition: all 10s;
+      }
+
+      .block {
+        width: 100px;
+        height: 100px;
+      }
+
+      .block-active {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="triggle()">触发</button>
+
+    <div class="block"></div>
+
+    <script>
+      let block = document.getElementsByClassName("block")[0];
+
+      function triggle() {
+        let attr = block.getAttribute("class");
+        console.log(attr);
+        if (attr === "block") {
+          block.setAttribute("class", "block-active");
+        } else {
+          block.setAttribute("class", "block");
+        }
+      }
+    </script>
+  </body>
+</html>

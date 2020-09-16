@@ -1,0 +1,23 @@
+<div class="ug-logger">
+  <div class="ug-logger-filter">
+    <span class="ug-filter-info">
+      <input type="checkbox" name="ug-filter-info" id="">
+      <label for="ug-filter-info">信息</label>
+    </span>
+    <span class="ug-filter-warn">
+      <input type="checkbox" name="ug-filter-warn" id="">
+      <label for="ug-filter-warn">警告</label>
+    </span>
+    <span class="ug-filter-error">
+      <input type="checkbox" name="ug-filter-error" id="">
+      <label for="ug-filter-error">错误</label>
+    </span>
+    <span class="ug-show-line-num">
+      <input type="checkbox" name="ug-show-line-num" id="">
+      <label for="ug-show-line-num">序号</label>
+    </span>
+  </div>
+  <div class="ug-logger-container">
+    <ng-container *ngFor="let item of list"></ng-container>
+  </div>
+</div>

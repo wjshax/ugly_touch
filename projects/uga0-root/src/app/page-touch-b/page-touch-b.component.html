@@ -1,0 +1,34 @@
+<p>
+  page-touch-b works!
+</p>
+
+<button (click)="close()">关闭</button>
+
+<div
+  class="touch-area"
+  libUgLibTouch
+  [gestures]="[UgLibTouchGesture.Vertical]"
+  (touched)="touchedY($event)"
+  [style.top.px]="top"
+>
+  <div
+    class="touch-area-inside"
+    libUgLibTouch
+    [gestures]="[UgLibTouchGesture.Horizontal]"
+    (touched)="touchedX($event)"
+    [style.left.px]="left"
+  >
+    <div
+      class="touch-area-drag"
+      libUgLibTouch
+      [gestures]="[UgLibTouchGesture.VerHor]"
+      (touched)="drag($event)"
+      [style.top.px]="dragTop"
+      [style.left.px]="dragLeft"
+    ></div>
+  </div>
+</div>
+
+<div *ngFor="let msg of logger.messages">{{ msg }}</div>
+
+

@@ -1,0 +1,42 @@
+<h5>animations-b</h5>
+<button (click)="close()">关闭</button>
+
+<hr style="margin:10px 0;" />
+
+<input
+  type="range"
+  name=""
+  id="321"
+  min="0"
+  max="100"
+  step="1"
+  [(ngModel)]="a2Val.value"
+  (change)="valueChanged()"
+  (input)='inputHandle()'
+  libUgLibTouch [stop]='true'
+/>
+
+<div class="touchArea" libUgLibTouch></div>
+<hr style="margin:20px;" />
+<div class="touchArea" libUgLibTouch></div>
+
+<div>a2Val2:{{ a2Val.value }},rotation:{{ a2Val.value | rotateCal }}</div>
+
+<div class="a2-container">
+  <div class="a2-content" [style.transform]="a2Val.value | rotateCal"
+  [style.transitionDuration]="duration"
+  [class]="moving"
+  >↑</div>
+</div>
+
+<div
+  class="a2-height"
+  [style.height]="a2Val.value > 50 ? '50px' : a2Val.value + 'px'"
+  [style.transitionDuration]="duration"
+></div>
+<hr style="margin:20px;" />
+<div
+  class="a2-height"
+  [style.height]="a2Val.value <= 50 ? '50px' : a2Val.value + 'px'"
+  [style.transitionDuration]="duration"
+></div>

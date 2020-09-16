@@ -1,0 +1,98 @@
+<h5>
+  page-animations works!
+</h5>
+
+<button (click)="close()">关闭</button>
+
+<h6>
+  animation 1
+</h6>
+
+<button (click)="test1Toggle()">打开/关闭</button>
+
+<button (click)="testHandle()">真假</button> {{ trueFalse }}
+
+<hr style="margin:20px;" />
+
+<div
+  [@openClose]="isOpen ? 'open' : 'closed'"
+  (@openClose.start)="onAnimationEvent($event)"
+  (@openClose.done)="onAnimationEvent($event)"
+  class="open-close-container"
+>
+  <p>The box is now {{ isOpen ? "Open" : "Closed" }}!</p>
+</div>
+
+<hr style="margin:20px;" />
+
+<div
+  [@openClose]="!isOpen ? 'open' : 'closed'"
+  (@openClose.start)="onAnimationEvent($event)"
+  (@openClose.done)="onAnimationEvent($event)"
+  class="open-close-container"
+>
+  <p>The box is now {{ !isOpen ? "Open" : "Closed" }}!</p>
+</div>
+
+<hr />
+<hr style="margin:20px;" />
+<hr />
+
+<h6>animation 2</h6>
+
+<!-- 这种会触发touch的组件需要，阻止touch的冒泡 -->
+<input
+  type="range"
+  name=""
+  id="123"
+  min="0"
+  max="100"
+  step="1"
+  [(ngModel)]="a2Val.value"
+  libUgLibTouch [stop]='true'
+/>
+
+<div>a2Val:{{ a2Val.value }},rotation:{{ a2Val.value | rotateCal }}</div>
+
+<div class="a2-container">
+  <div class="a2-content" [style.transform]="a2Val.value | rotateCal">↑</div>
+</div>
+
+<div class="a2-height" [style.height]="a2Val.value>50?'50px':a2Val.value + 'px'"></div>
+<hr style="margin:20px;" />
+<div class="a2-height" [style.height]="a2Val.value<=50?'50px':a2Val.value + 'px'"></div>
+
+
+<h6>animation 3</h6>
+
+<input
+  type="range"
+  name=""
+  id="321"
+  min="0"
+  max="100"
+  step="1"
+  [(ngModel)]="a2Val2.value"
+  libUgLibTouch [stop]='true'
+/>
+<hr>
+<input
+  type="range"
+  name=""
+  id="321"
+  min="0"
+  max="100"
+  step="1"
+  [(ngModel)]="a2Val2.value"
+  libUgLibTouch [stop]='true'
+/>
+
+<div>a2Val2:{{ a2Val2.value }},rotation:{{ a2Val2.value | rotateCal }}</div>
+
+<div class="a2-container">
+  <div class="a2-content" [style.transform]="a2Val2.value | rotateCal">↑</div>
+</div>
+
+<div class="a2-height" [style.height]="a2Val2.value>50?'50px':a2Val2.value + 'px'"></div>
+<hr style="margin:20px;" />
+<div class="a2-height" [style.height]="a2Val2.value<=50?'50px':a2Val2.value + 'px'"></div>

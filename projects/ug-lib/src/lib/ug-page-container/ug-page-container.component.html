@@ -1,0 +1,10 @@
+<div class="page-container">
+  <lib-ug-page 
+  *ngFor="let page of pageList" 
+  [page]="page.page" 
+  [style.left.px]="page.left"
+  [style.transitionDuration]='duration'
+  class="page"
+  >
+  </lib-ug-page>
+</div>

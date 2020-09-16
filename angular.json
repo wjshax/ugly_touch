@@ -1,0 +1,402 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ug-lib": {
+      "projectType": "library",
+      "root": "projects/ug-lib",
+      "sourceRoot": "projects/ug-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ug-lib/tsconfig.lib.json",
+            "project": "projects/ug-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ug-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ug-lib/src/test.ts",
+            "tsConfig": "projects/ug-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/ug-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ug-lib/tsconfig.lib.json",
+              "projects/ug-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "uga0-root": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/uga0-root",
+      "sourceRoot": "projects/uga0-root/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/uga0-root",
+            "index": "projects/uga0-root/src/index.html",
+            "main": "projects/uga0-root/src/main.ts",
+            "polyfills": "projects/uga0-root/src/polyfills.ts",
+            "tsConfig": "projects/uga0-root/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/uga0-root/src/favicon.ico",
+              "projects/uga0-root/src/assets"
+            ],
+            "styles": [
+              "projects/uga0-root/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uga0-root/src/environments/environment.ts",
+                  "with": "projects/uga0-root/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "uga0-root:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "uga0-root:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "uga0-root:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uga0-root/src/test.ts",
+            "polyfills": "projects/uga0-root/src/polyfills.ts",
+            "tsConfig": "projects/uga0-root/tsconfig.spec.json",
+            "karmaConfig": "projects/uga0-root/karma.conf.js",
+            "assets": [
+              "projects/uga0-root/src/favicon.ico",
+              "projects/uga0-root/src/assets"
+            ],
+            "styles": [
+              "projects/uga0-root/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uga0-root/tsconfig.app.json",
+              "projects/uga0-root/tsconfig.spec.json",
+              "projects/uga0-root/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/uga0-root/e2e/protractor.conf.js",
+            "devServerTarget": "uga0-root:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "uga0-root:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "uga1-music": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/uga1-music",
+      "sourceRoot": "projects/uga1-music/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/uga1-music",
+            "index": "projects/uga1-music/src/index.html",
+            "main": "projects/uga1-music/src/main.ts",
+            "polyfills": "projects/uga1-music/src/polyfills.ts",
+            "tsConfig": "projects/uga1-music/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/uga1-music/src/favicon.ico",
+              "projects/uga1-music/src/assets"
+            ],
+            "styles": [
+              "projects/uga1-music/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uga1-music/src/environments/environment.ts",
+                  "with": "projects/uga1-music/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "uga1-music:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "uga1-music:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "uga1-music:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uga1-music/src/test.ts",
+            "polyfills": "projects/uga1-music/src/polyfills.ts",
+            "tsConfig": "projects/uga1-music/tsconfig.spec.json",
+            "karmaConfig": "projects/uga1-music/karma.conf.js",
+            "assets": [
+              "projects/uga1-music/src/favicon.ico",
+              "projects/uga1-music/src/assets"
+            ],
+            "styles": [
+              "projects/uga1-music/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uga1-music/tsconfig.app.json",
+              "projects/uga1-music/tsconfig.spec.json",
+              "projects/uga1-music/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/uga1-music/e2e/protractor.conf.js",
+            "devServerTarget": "uga1-music:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "uga1-music:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "uga2-album": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/uga2-album",
+      "sourceRoot": "projects/uga2-album/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/uga2-album",
+            "index": "projects/uga2-album/src/index.html",
+            "main": "projects/uga2-album/src/main.ts",
+            "polyfills": "projects/uga2-album/src/polyfills.ts",
+            "tsConfig": "projects/uga2-album/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/uga2-album/src/favicon.ico",
+              "projects/uga2-album/src/assets"
+            ],
+            "styles": [
+              "projects/uga2-album/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uga2-album/src/environments/environment.ts",
+                  "with": "projects/uga2-album/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "uga2-album:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "uga2-album:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "uga2-album:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uga2-album/src/test.ts",
+            "polyfills": "projects/uga2-album/src/polyfills.ts",
+            "tsConfig": "projects/uga2-album/tsconfig.spec.json",
+            "karmaConfig": "projects/uga2-album/karma.conf.js",
+            "assets": [
+              "projects/uga2-album/src/favicon.ico",
+              "projects/uga2-album/src/assets"
+            ],
+            "styles": [
+              "projects/uga2-album/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uga2-album/tsconfig.app.json",
+              "projects/uga2-album/tsconfig.spec.json",
+              "projects/uga2-album/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/uga2-album/e2e/protractor.conf.js",
+            "devServerTarget": "uga2-album:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "uga2-album:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ug-lib",
+  "cli": {
+    "analytics": "0fcc117f-6b5a-47b8-b60e-aa1b5d664aa8"
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>iframe content!</p>
+    <button>按下向父页面发射事件</button>
+</body>
+<script>
+    let btn = document.getElementsByTagName('button')[0];
+    let cnt = 0;
+
+    function sayHi(){
+        console.log('hi');
+    }
+
+    btn.addEventListener('click', function (event) {
+        console.log('btn clicked', event);
+        cnt++;
+    }, false);
+
+    let body = document.getElementsByTagName('body')[0];
+    body.addEventListener('click', function (event) {
+        console.log('body:', event);
+
+        // 不能发送方程
+        // window.parent.postMessage({msg:'clicked', cnt:cnt, sayHi:sayHi});
+        window.parent.postMessage({msg:'clicked', cnt:cnt});
+
+    }, false);
+
+    window.addEventListener('message',function(event){
+        console.log('收到来自父页面的数据：',event.data);
+    });
+
+    
+</script>
+
+</html>

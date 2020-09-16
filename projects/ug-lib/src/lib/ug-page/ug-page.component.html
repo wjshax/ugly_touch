@@ -1,0 +1,10 @@
+<div class="page-wrapper"
+[style.left.px]='left'
+[style.transitionDuration]='duration'
+libUgLibTouch  [gestures]='[UgLibTouchGesture.Horizontal,UgLibTouchGesture.Vertical]' [root]='true'
+(touched)='pageTouched($event)'
+>
+    <ng-template 
+    libUgPageHost>
+    </ng-template>
+</div>

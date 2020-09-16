@@ -1,0 +1,38 @@
+button {
+  width: 40vw;
+  height: 8vw;
+  margin: 1vw 5vw;
+  font-size: 0.8em;
+}
+
+@media screen and (min-width: 576px) {
+  button {
+    width: 40vw;
+    height: 8vw;
+    margin: 1vw 5vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  button {
+    width: 30vw;
+    height: 8vw;
+    margin: 1vw 1.25vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  button {
+    width: 20vw;
+    height: 8vw;
+    margin: 1vw 4vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  button {
+    width: 18vw;
+    height: 8vw;
+    margin: 1vw 1vw;
+  }
+}

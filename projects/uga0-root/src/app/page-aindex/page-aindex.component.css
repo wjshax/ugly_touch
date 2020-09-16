@@ -1,0 +1,155 @@
+.content-area{
+  background-color: #ccc;
+  width:100vw;
+  height: 100vh;
+}
+
+.content-area>div{
+    background-color: white;
+    /* margin-top:10px; */
+}
+
+.header{
+  background-color:rgb(63,128,204) !important;
+  height:50px;
+  width:100%;
+  top:0px;
+  position: fixed;
+  opacity: 1;
+  z-index: 99;
+}
+
+.footer {
+  position: fixed;
+  bottom:0px;
+  width:100%;
+  display: block;
+  flex-direction: row;
+  /* border-top:1px solid #ccc; */
+  background-color: white;
+}
+
+@media (-webkit-min-device-pixel-ratio:2){
+    .footer{
+        border-top:0.5px solid #ccc;
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio:3){
+    .footer{
+        border-top:0.333333333333333333333px solid #ccc;
+    }
+}
+
+
+.block{
+  margin:5px 0;
+}
+
+.footer > * {
+  display: inline-block;
+  width:20%;
+  text-align: center;
+  margin:10px 0;
+}
+
+.content{
+    /* margin-top:50px; */
+    position: relative;
+    top:50px;
+    height:calc(100% - 93px);
+    overflow: hidden;
+}
+
+.main-content{
+    width:100vw;
+    height: calc(100% - 288px);
+    overflow-y:scroll;
+    overflow-x: auto;
+    background-color: #f0f0f0;
+}
+
+.top-btns{
+    background-color:rgb(63,128,204);
+    width:100%;
+}
+.top-btn{
+    width:25%;
+    display: inline-block;
+    text-align: center;
+}
+
+.top-icon{
+    width:50px;
+    height:50px;
+}
+
+.middle-btns{
+    width:100%;
+}
+div[class^="middle-btns-row"]{
+    width:100%;
+}
+.middle-btn{
+    width:25%;
+    display: inline-block;
+    text-align: center;
+}
+.middle-icon{
+    width:30px;
+    height:30px;
+}
+
+.middle-icon-wrapper{
+    padding-top:20px;
+    width:100%;
+    height:30px;
+    text-align: center;
+}
+
+.middle-btn>span{
+    font-size: 8px;
+}
+
+.loose-to-update{
+    width:100%;
+    height:100px;
+    text-align: center;
+    background-color: lightblue;
+    overflow: hidden;
+}
+
+
+.bottom-line{
+    text-align: center;
+}
+
+.bottom-line-line{
+    text-decoration-line: line-through;
+}
+
+.middle-rotation{
+    width:100%;
+    height:100px;
+    background-color: lightcoral;
+}
+
+.anti-virus{
+    width:100%;
+    height:100px;
+    background-color: lightseagreen;
+}
+
+.hui-pay{
+    width:100%;
+    height:100px;
+    background-color: rgb(37, 241, 156);
+}
+
+.msgs{
+    width:100%;
+    height:100px;
+    background-color: rgb(37, 241, 156);
+}
+
+

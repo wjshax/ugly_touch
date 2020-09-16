@@ -1,0 +1,36 @@
+<h3>
+  page-touch-d works!
+</h3>
+<button (click)="close()">关闭</button>
+
+<div class="zoom-rotation-container">
+  <div
+    class="rotation"
+    libUgLibTouch
+    [gestures]="[UgLibTouchGesture.Rotation]"
+    (touched)="touchedZoomRotation($event)"
+    [style.top.px]='rtop'
+    [style.left.px]='rleft'
+    [style.transform]='rrotate | rotateCal'
+  >
+    <div
+      class="zoom-ratation-object"
+      libUgLibTouch
+      [gestures]="[UgLibTouchGesture.ZoomRotation]"
+      (touched)="touchedZoomRotation($event)"
+      [style.top.px]="top"
+      [style.left.px]="left"
+      [style.width.px]="width"
+      [style.height.px]="height"
+      [style.transform]='rotate | rotateCal'
+    >
+      <div>👆</div>
+    </div>
+  </div>
+</div>
+
+<ul class="msg-list"
+libUgLibTouch [stop]='true'
+>
+  <div *ngFor="let msg of ugTouchLogService.msgs">{{ msg }}</div>
+</ul>

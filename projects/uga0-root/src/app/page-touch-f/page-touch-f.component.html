@@ -1,0 +1,17 @@
+<h4>
+  page-touch-f works!
+</h4>
+
+<div class="rotation-container">
+  <div
+    class="rotation-object"
+    libUgLibTouch
+    [gestures]="[UgLibTouchGesture.ZoomRotation]"
+    (touched)="touchedRotation($event)"
+    [style.top.px]="top"
+    [style.left.px]="left"
+    [style.transform]="'rotate('+rotate+'deg)'"
+  >
+    <div></div>
+  </div>
+</div>
